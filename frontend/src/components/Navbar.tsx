@@ -10,10 +10,10 @@ import crossIcon from "../assets/frontend_assets/cross_icon.png";
 import { useState } from "react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="flex items-center justify-between px-8 py-5 md:px-16 lg:px-36 ">
+    <div className="flex items-center justify-between px-8 py-5 md:px-16 lg:px-36 mb-6">
       <Link to={"/"}>
         <h1>
           <img src={logo} alt="logo" className="w-36 h-auto" />
