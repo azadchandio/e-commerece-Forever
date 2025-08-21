@@ -14,9 +14,9 @@ import p12 from "../assets/frontend_assets/p_img12.png";
 import p13 from "../assets/frontend_assets/p_img13.png";
 
 
-import type { Product } from "../types/Product";
+import type { Productt } from "../types/Product";
 
-export const latestCollections: Product[] = [
+export const latestCollections: Productt[] = [
   {
     name: "Women Round Neck Cotton Top",
     price: 19.99,
@@ -59,7 +59,7 @@ export const latestCollections: Product[] = [
   },
 ];
 
-export const bestSellers: Product[] = [
+export const bestSellers: Productt[] = [
   {
     name: "Men Printed Shirt",
     price: 24.99,

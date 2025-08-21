@@ -1,6 +1,12 @@
-// types/Product.ts
 export interface Product {
+  _id: string;
   name: string;
+  description: string;
   price: number;
-  image: string;
+  image: string[];
+  category: string;
+  subCategory: string;
+  sizes: string[];
+  date: number;
+  bestseller: boolean;
 }

@@ -17,7 +17,7 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-8">
-        {products.map((product: Product, index: number) => (
+        {products.slice(0,8).map((product: Product, index: number) => (
           <ProductCard key={index} product={product} />
         ))}
       </div>

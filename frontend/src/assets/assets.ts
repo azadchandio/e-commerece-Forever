@@ -1,79 +1,81 @@
-import p_img1 from './p_img1.png'
-import p_img2_1 from './p_img2_1.png'
-import p_img2_2 from './p_img2_2.png'
-import p_img2_3 from './p_img2_3.png'
-import p_img2_4 from './p_img2_4.png'
-import p_img3 from './p_img3.png'
-import p_img4 from './p_img4.png'
-import p_img5 from './p_img5.png'
-import p_img6 from './p_img6.png'
-import p_img7 from './p_img7.png'
-import p_img8 from './p_img8.png'
-import p_img9 from './p_img9.png'
-import p_img10 from './p_img10.png'
-import p_img11 from './p_img11.png'
-import p_img12 from './p_img12.png'
-import p_img13 from './p_img13.png'
-import p_img14 from './p_img14.png'
-import p_img15 from './p_img15.png'
-import p_img16 from './p_img16.png'
-import p_img17 from './p_img17.png'
-import p_img18 from './p_img18.png'
-import p_img19 from './p_img19.png'
-import p_img20 from './p_img20.png'
-import p_img21 from './p_img21.png'
-import p_img22 from './p_img22.png'
-import p_img23 from './p_img23.png'
-import p_img24 from './p_img24.png'
-import p_img25 from './p_img25.png'
-import p_img26 from './p_img26.png'
-import p_img27 from './p_img27.png'
-import p_img28 from './p_img28.png'
-import p_img29 from './p_img29.png'
-import p_img30 from './p_img30.png'
-import p_img31 from './p_img31.png'
-import p_img32 from './p_img32.png'
-import p_img33 from './p_img33.png'
-import p_img34 from './p_img34.png'
-import p_img35 from './p_img35.png'
-import p_img36 from './p_img36.png'
-import p_img37 from './p_img37.png'
-import p_img38 from './p_img38.png'
-import p_img39 from './p_img39.png'
-import p_img40 from './p_img40.png'
-import p_img41 from './p_img41.png'
-import p_img42 from './p_img42.png'
-import p_img43 from './p_img43.png'
-import p_img44 from './p_img44.png'
-import p_img45 from './p_img45.png'
-import p_img46 from './p_img46.png'
-import p_img47 from './p_img47.png'
-import p_img48 from './p_img48.png'
-import p_img49 from './p_img49.png'
-import p_img50 from './p_img50.png'
-import p_img51 from './p_img51.png'
-import p_img52 from './p_img52.png'
+import type { Product } from '../types/Product';
 
 
-import logo from './logo.png'
-import hero_img from './hero_img.png'
-import cart_icon from './cart_icon.png'
-import bin_icon from './bin_icon.png'
-import dropdown_icon from './dropdown_icon.png'
-import exchange_icon from './exchange_icon.png'
-import profile_icon from './profile_icon.png'
-import quality_icon from './quality_icon.png'
-import search_icon from './search_icon.png'
-import star_dull_icon from './star_dull_icon.png'
-import star_icon from './star_icon.png'
-import support_img from './support_img.png'
-import menu_icon from './menu_icon.png'
-import about_img from './about_img.png'
-import contact_img from './contact_img.png'
-import razorpay_logo from './razorpay_logo.png'
-import stripe_logo from './stripe_logo.png'
-import cross_icon from './cross_icon.png'
+// === IMAGE IMPORTS ===
+import p_img1 from '../assets/frontend_assets/p_img1.png'
+import p_img2_1 from '../assets/frontend_assets/p_img2_1.png'
+import p_img3 from '../assets/frontend_assets/p_img3.png'
+import p_img4 from '../assets/frontend_assets/p_img4.png'
+import p_img5 from '../assets/frontend_assets/p_img5.png'
+import p_img6 from '../assets/frontend_assets/p_img6.png'
+import p_img7 from '../assets/frontend_assets/p_img7.png'
+import p_img8 from '../assets/frontend_assets/p_img8.png'
+import p_img9 from '../assets/frontend_assets/p_img9.png'
+import p_img10 from '../assets/frontend_assets/p_img10.png'
+import p_img11 from '../assets/frontend_assets/p_img11.png'
+import p_img12 from '../assets/frontend_assets/p_img12.png'
+import p_img13 from '../assets/frontend_assets/p_img13.png'
+import p_img14 from '../assets/frontend_assets/p_img14.png'
+import p_img15 from '../assets/frontend_assets/p_img15.png'
+import p_img16 from '../assets/frontend_assets/p_img16.png'
+import p_img17 from '../assets/frontend_assets/p_img17.png'
+import p_img18 from '../assets/frontend_assets/p_img18.png'
+import p_img19 from '../assets/frontend_assets/p_img19.png'
+import p_img20 from '../assets/frontend_assets/p_img20.png'
+import p_img21 from '../assets/frontend_assets/p_img21.png'
+import p_img22 from '../assets/frontend_assets/p_img22.png'
+import p_img23 from '../assets/frontend_assets/p_img23.png'
+import p_img24 from '../assets/frontend_assets/p_img24.png'
+import p_img25 from '../assets/frontend_assets/p_img25.png'
+import p_img26 from '../assets/frontend_assets/p_img26.png'
+import p_img27 from '../assets/frontend_assets/p_img27.png'
+import p_img28 from '../assets/frontend_assets/p_img28.png'
+import p_img29 from '../assets/frontend_assets/p_img29.png'
+import p_img30 from '../assets/frontend_assets/p_img30.png'
+import p_img31 from '../assets/frontend_assets/p_img31.png'
+import p_img32 from '../assets/frontend_assets/p_img32.png'
+import p_img33 from '../assets/frontend_assets/p_img33.png'
+import p_img34 from '../assets/frontend_assets/p_img34.png'
+import p_img35 from '../assets/frontend_assets/p_img35.png'
+import p_img36 from '../assets/frontend_assets/p_img36.png'
+import p_img37 from '../assets/frontend_assets/p_img37.png'
+import p_img38 from '../assets/frontend_assets/p_img38.png'
+import p_img39 from '../assets/frontend_assets/p_img39.png'
+import p_img40 from '../assets/frontend_assets/p_img40.png'
+import p_img41 from '../assets/frontend_assets/p_img41.png'
+import p_img42 from '../assets/frontend_assets/p_img42.png'
+import p_img43 from '../assets/frontend_assets/p_img43.png'
+import p_img44 from '../assets/frontend_assets/p_img44.png'
+import p_img45 from '../assets/frontend_assets/p_img45.png'
+import p_img46 from '../assets/frontend_assets/p_img46.png'
+import p_img47 from '../assets/frontend_assets/p_img47.png'
+import p_img48 from '../assets/frontend_assets/p_img48.png'
+import p_img49 from '../assets/frontend_assets/p_img49.png'
+import p_img50 from '../assets/frontend_assets/p_img50.png'
+import p_img51 from '../assets/frontend_assets/p_img51.png'
+import p_img52 from '../assets/frontend_assets/p_img52.png'
 
+// === ASSET IMPORTS ===
+import logo from '../assets/frontend_assets/logo.png'
+import hero_img from '../assets/frontend_assets/hero_img.png'
+import cart_icon from '../assets/frontend_assets/cart_icon.png'
+import bin_icon from '../assets/frontend_assets/bin_icon.png'
+import dropdown_icon from '../assets/frontend_assets/dropdown_icon.png'
+import exchange_icon from '../assets/frontend_assets/exchange_icon.png'
+import profile_icon from '../assets/frontend_assets/profile_icon.png'
+import quality_icon from '../assets/frontend_assets/quality_icon.png'
+import search_icon from '../assets/frontend_assets/search_icon.png'
+import star_dull_icon from '../assets/frontend_assets/star_dull_icon.png'
+import star_icon from '../assets/frontend_assets/star_icon.png'
+import support_img from '../assets/frontend_assets/support_img.png'
+import menu_icon from '../assets/frontend_assets/menu_icon.png'
+import about_img from '../assets/frontend_assets/about_img.png'
+import contact_img from '../assets/frontend_assets/contact_img.png'
+import razorpay_logo from '../assets/frontend_assets/razorpay_logo.png'
+import stripe_logo from '../assets/frontend_assets/stripe_logo.png'
+import cross_icon from '../assets/frontend_assets/cross_icon.png'
+
+// === EXPORT ASSETS ===
 export const assets = {
     logo,
     hero_img,
@@ -95,7 +97,7 @@ export const assets = {
     cross_icon
 }
 
-export const products = [
+export const products: Product[] = [
     {
         _id: "aaaaa",
         name: "Women Round Neck Cotton Top",
@@ -113,7 +115,7 @@ export const products = [
         name: "Men Round Neck Pure Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 200,
-        image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
+        image: [p_img2_1,],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -238,7 +240,7 @@ export const products = [
         subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: 1716624445448,
-        bestseller: false
+        bestseller: true
     },
     {
         _id: "aaaam",
@@ -250,7 +252,7 @@ export const products = [
         subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: 1716625545448,
-        bestseller: false
+        bestseller: true
     },
     {
         _id: "aaaan",
@@ -262,7 +264,7 @@ export const products = [
         subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: 1716626645448,
-        bestseller: false
+        bestseller: true
     },
     {
         _id: "aaaao",
@@ -721,3 +723,34 @@ export const products = [
     }
 
 ]
+
+import { RefreshCw, Shield, Headphones } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+export type Policy = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  color: string;
+};
+
+export const policies: Policy[] = [
+  {
+    icon: RefreshCw,
+    title: 'Easy Exchange Policy',
+    description: 'We offer hassle-free exchange policy',
+    color: 'text-blue-500',
+  },
+  {
+    icon: Shield,
+    title: '7 Days Return Policy',
+    description: 'We provide 7 days free return policy',
+    color: 'text-green-500',
+  },
+  {
+    icon: Headphones,
+    title: 'Best Customer Support',
+    description: 'We provide 24/7 customer support',
+    color: 'text-purple-500',
+  },
+];
