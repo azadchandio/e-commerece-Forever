@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { policies } from '../assets/dummyData'; // ✅ Import from dummyData
-// import type { Policy } from '../assets/dummyData'; // Optional: for extra type safety
+import { policies } from '../assets/assets'; // ✅ Import from assetsdata
+// import type { Policy } from '../assets/assetsdata'; // Optional: for extra type safety
 
 const PolicySection = () => {
   const [email, setEmail] = useState('');

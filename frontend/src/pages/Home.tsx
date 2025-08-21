@@ -9,8 +9,11 @@ const Home = () => {
     .sort((a, b) => b.date - a.date)
     .slice(0, 8); // optional: only take the latest 8
 
+  const bestSellers =[...products]
+    .filter((product) => product.bestseller)
+    .slice(0,8); // optional: only take the first 8 best sellers
   // Filter best sellers
-  const bestSellers = products.filter((product) => product.bestseller);
+  // const bestSellers = products.filter((product) => product.bestseller);
 
   return (
     <div>

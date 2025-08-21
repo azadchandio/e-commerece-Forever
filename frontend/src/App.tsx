@@ -9,7 +9,7 @@ const App = () => {
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/product/:id" element={<ProductDetail/>}/>
+      <Route path="/product/:productId" element={<ProductDetail/>}/>
     </Routes>
     <Footer/>  
     </>

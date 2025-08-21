@@ -3,7 +3,11 @@ import type { Product } from '../types/Product';
 
 // === IMAGE IMPORTS ===
 import p_img1 from '../assets/frontend_assets/p_img1.png'
+import p_img2 from '../assets/frontend_assets/p_img2.png'
 import p_img2_1 from '../assets/frontend_assets/p_img2_1.png'
+import p_img2_2 from '../assets/frontend_assets/p_img2_2.png'
+import p_img2_3 from '../assets/frontend_assets/p_img2_3.png'
+import p_img2_4 from '../assets/frontend_assets/p_img2_4.png'
 import p_img3 from '../assets/frontend_assets/p_img3.png'
 import p_img4 from '../assets/frontend_assets/p_img4.png'
 import p_img5 from '../assets/frontend_assets/p_img5.png'
@@ -103,7 +107,7 @@ export const products: Product[] = [
         name: "Women Round Neck Cotton Top",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 100,
-        image: [p_img1],
+        image: [p_img1,p_img10],
         category: "Women",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],
@@ -115,7 +119,7 @@ export const products: Product[] = [
         name: "Men Round Neck Pure Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 200,
-        image: [p_img2_1,],
+        image: [p_img2,p_img52],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -427,7 +431,7 @@ export const products: Product[] = [
         name: "Men Slim Fit Relaxed Denim Jacket",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 230,
-        image: [p_img28],
+        image: [p_img28,p_img11,p_img2_1,p_img13],
         category: "Men",
         subCategory: "Winterwear",
         sizes: ["S", "M", "L", "XL"],
@@ -714,7 +718,7 @@ export const products: Product[] = [
         name: "Men Slim Fit Relaxed Denim Jacket",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 350,
-        image: [p_img52],
+        image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
         category: "Men",
         subCategory: "Winterwear",
         sizes: ["S", "M", "L", "XL"],

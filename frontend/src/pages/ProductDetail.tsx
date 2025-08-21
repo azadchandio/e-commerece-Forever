@@ -1,8 +1,96 @@
+import { useParams } from "react-router-dom";
+import { products } from "../assets/assets";
+import type { Product } from "../types/Product";
+import  ProductCard from "../components/ProductCard";
+import { useEffect, useState } from "react";
 
 const ProductDetail = () => {
-  return (
-    <div>ProductDetail</div>
-  )
-}
 
-export default ProductDetail
+  const { productId } = useParams<{ productId: string }>();
+  const product: Product | undefined = products.find(
+    (item) => item._id === productId
+  );
+
+  const [currentImage, setCurrentImage] = useState<string>(
+    Array.isArray(product?.image) ? product.image[0] : product?.image || ""
+  );
+
+  // Inside the component, after the `useState` declaration
+useEffect(() => {
+  if (product) {
+    setCurrentImage(Array.isArray(product.image) ? product.image[0] : product.image || "");
+  }
+}, [product]); // re-run when the product changes
+
+  if (!product) return <div className="p-10 text-red-500">Product not found</div>;
+
+  return (
+    <div className="px-8 py-5 md:px-16 lg:px-34">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex gap-6">
+          <div className="">
+            {product.image.map((img,index)=>(
+              <div key={index}
+              onClick={() => setCurrentImage(img)}>
+                <img src={img} alt={`${product.name} ${index + 1}`} className="rounded my-4 w-24 h-24 object-cover cursor-pointer hover:border-2  transition duration-200"/>
+              </div>
+            ))}
+          </div>
+          {/* Main image */}
+            <img src={currentImage} alt={product.name} className="rounded my-4" />
+        </div>
+        
+            {/* deatils */}
+        <div className="flex-2 mt-5 ">
+            <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+            <p className="text-gray-600 text-xl font-medium mb-6">${product.price.toFixed(2)}</p>
+            <p className="text-gray-700 leading-relaxed mb-8">{product.description}</p>
+
+          <div className="mb-8">
+            <p className="text-gray-500 font-bold mb-4">Select Size</p>
+            <div className="flex flex-wrap gap-3">
+              {product.sizes.map((size, index) => (
+                <button
+                  key={index}
+                  className="border-2 border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-50 transition-all duration-200 rounded-sm">
+                  {size}
+                </button>
+              ))}   
+            </div>
+          </div>
+            <button className="bg-gray-900 hover:bg-black text-white font-medium px-10 py-3 transition-all duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 rounded-sm">
+              Add to Cart
+            </button>
+        </div>
+      </div> 
+
+        <div className="flex flex-col mt-10 ">
+          <div>
+            <button className="border-l border-t  px-5 py-3 border-gray-400 cursor-pointer">Description</button>
+            <button className="border-r border-t border-l px-5 py-3 border-gray-400 cursor-pointer">Reviews</button>
+          </div>
+          <div className="border border-gray-400 py-15 px-5 ">
+            <p className="mb-5">An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.</p>
+
+            <p>E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.</p>
+          </div>
+        </div>
+
+         <div className="mt-20 flex flex-col items-center lg:px-28">
+          <h2 className="text-2xl font-bold mt-10 mb-5 ">Related Products</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {products
+              .filter((item) => item.category === product.category && item._id !== product._id)
+              .slice(0, 5)
+              .map((relatedProduct) => (
+                <ProductCard key={relatedProduct._id} product={relatedProduct} />
+              ))}
+          </div>
+
+          {/* <ProductSection title="Related Products" products={products.filter((item) => item.category === product.category && item._id !== product._id).slice(0, 5)} /> */}
+        </div>
+      </div>
+  );
+};
+
+export default ProductDetail;
