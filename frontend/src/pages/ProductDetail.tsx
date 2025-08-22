@@ -3,6 +3,7 @@ import { products } from "../assets/assets";
 import type { Product } from "../types/Product";
 import  ProductCard from "../components/ProductCard";
 import { useEffect, useState } from "react";
+import ProductReviews from "../components/ProductReviews";
 
 const ProductDetail = () => {
 
@@ -14,6 +15,9 @@ const ProductDetail = () => {
   const [currentImage, setCurrentImage] = useState<string>(
     Array.isArray(product?.image) ? product.image[0] : product?.image || ""
   );
+
+    // Add state for active tab
+  const [activeTab, setActiveTab] = useState<'description' | 'reviews'>('description');
 
   // Inside the component, after the `useState` declaration
 useEffect(() => {
@@ -66,13 +70,33 @@ useEffect(() => {
 
         <div className="flex flex-col mt-10 ">
           <div>
-            <button className="border-l border-t  px-5 py-3 border-gray-400 cursor-pointer">Description</button>
-            <button className="border-r border-t border-l px-5 py-3 border-gray-400 cursor-pointer">Reviews</button>
-          </div>
-          <div className="border border-gray-400 py-15 px-5 ">
-            <p className="mb-5">An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.</p>
+            <button className={`border-l border-t  px-5 py-3 border-gray-400 cursor-pointer
+              ${activeTab === 'description'
+              ? 'bg-white borber-b-0'
+              : 'bg-gray-100 borber-b border-gray-400' }`}
+              onClick={()=>setActiveTab('description')}
+              >
+              Description</button>
 
-            <p>E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.</p>
+            <button className={`border-r border-t border-l px-5 py-3 border-gray-400 cursor-pointer 
+              ${activeTab === 'reviews'
+              ? 'bg-white border-b-0'
+              : 'bg-gray-100 border-b border-gray-400'
+              }`}
+              onClick={()=>setActiveTab('reviews')}
+              >
+              Reviews</button>
+          </div>
+          {/* desc area review area */}
+          <div className="border border-gray-400 py-15 px-5 ">
+            {activeTab === 'description'?(
+              <>
+              <p className="mb-5">An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.</p>
+              <p>E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.</p>
+              </>
+            ):(
+              <ProductReviews productId={product._id} productName={product.name}/>
+            )}
           </div>
         </div>
 
