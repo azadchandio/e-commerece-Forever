@@ -727,6 +727,11 @@ export const products: Product[] = [
     }
 
 ]
+// Updated filter categories to match the expanded data
+export const filterCategories = {
+    categories: ["Men", "Women", "Kids", "Unisex", "Teen"],
+    subCategories: ["Topwear", "Bottomwear", "Winterwear", "Footwear", "Accessories", "Activewear", "Formalwear"]
+};
 
 import { RefreshCw, Shield, Headphones } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
