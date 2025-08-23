@@ -1,23 +1,8 @@
-import { useState } from 'react';
 import { policies } from '../assets/assets'; // ✅ Import from assetsdata
+import Subscribe from './Subscribe';
 // import type { Policy } from '../assets/assetsdata'; // Optional: for extra type safety
 
 const PolicySection = () => {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      // Here you would typically send the email to your backend
-      console.log('Subscribed with email:', email);
-      setTimeout(() => {
-        setIsSubscribed(false);
-        setEmail('');
-      }, 2000);
-    }
-  };
 
   return (
     <div className=" py-16 px-4">
@@ -51,44 +36,7 @@ const PolicySection = () => {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Subscribe now & get 20% off
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-md mx-auto">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-          
-          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <div className="flex-1">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email id"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={isSubscribed}
-              className={`px-8 py-3 rounded-lg font-medium text-white transition-all duration-300 ${
-                isSubscribed 
-                  ? 'bg-green-500 hover:bg-green-600' 
-                  : 'bg-black hover:bg-gray-800 hover:transform hover:scale-105'
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black`}
-            >
-              {isSubscribed ? '✓ SUBSCRIBED' : 'SUBSCRIBE'}
-            </button>
-          </form>
-          
-          {isSubscribed && (
-            <p className="mt-4 text-green-600 font-medium animate-fade-in">
-              Thank you for subscribing! Check your email for the discount code.
-            </p>
-          )}
-        </div>
+          <Subscribe/>
       </div>
     </div>
   );

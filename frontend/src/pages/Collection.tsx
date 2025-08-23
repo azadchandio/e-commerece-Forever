@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import type { ChangeEvent } from "react";
-import ProductCard from "./ProductCard";
+import ProductCard from "../components/ProductCard";
 import { products, filterCategories } from "../assets/assets";
 // Type definitions
 import type { Product } from "../types/Product";

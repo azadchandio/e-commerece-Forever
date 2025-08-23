@@ -13,7 +13,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="flex items-center justify-between px-8 py-5 md:px-16 lg:px-36 mb-6">
+    <div className=" px-8 pt-5 md:px-16 lg:px-36 "> 
+      <div className="flex items-center justify-between border-b pb-12 border-gray-400">
       <Link to={"/"}>
         <h1>
           <img src={logo} alt="logo" className="w-36 h-auto" />
@@ -61,6 +62,7 @@ const Navbar = () => {
         <Link to="/contact" onClick={() => setIsOpen(false)}>
           CONTACT
         </Link>
+      </div>
       </div>
     </div>
   );
