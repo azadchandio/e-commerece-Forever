@@ -29,23 +29,24 @@ useEffect(() => {
   if (!product) return <div className="p-10 text-red-500">Product not found</div>;
 
   return (
-    <div className="px-8 py-5 md:px-16 lg:px-34">
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex gap-6">
-          <div className="">
+    <div className="px-8 py-5  sm:px-8 md:px-16 lg:px-34">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:flex-1">
+          <div className="flex lg:flex-col gap-2 lg:gap-4 order-2 lg:order-1 justify-center lg:justify-start overflow-x-auto lg:overflow-x-visible">
             {product.image.map((img,index)=>(
               <div key={index}
-              onClick={() => setCurrentImage(img)}>
-                <img src={img} alt={`${product.name} ${index + 1}`} className="rounded my-4 w-24 h-24 object-cover cursor-pointer hover:border-2  transition duration-200"/>
+              onClick={() => setCurrentImage(img)} >
+                <img src={img} alt={`${product.name} ${index + 1}`} className="rounded w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-cover cursor-pointer hover:border-2 hover:border-gray-900 transition duration-200"/>
               </div>
             ))}
           </div>
-          {/* Main image */}
-            <img src={currentImage} alt={product.name} className="rounded my-4" />
+          <div className="order-1 lg:order-2 flex-1">
+          <img src={currentImage} alt={product.name} className="rounded w-full h-auto object-cover max-w-full min-h-[300px] sm:min-h-[400px] md:min-h-[500px]"/>
+        </div>  
         </div>
         
             {/* deatils */}
-        <div className="flex-2 mt-5 ">
+        <div className="lg:flex-1 mt-4 lg:mt-0">
             <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
             <p className="text-gray-600 text-xl font-medium mb-6">${product.price.toFixed(2)}</p>
             <p className="text-gray-700 leading-relaxed mb-8">{product.description}</p>
@@ -56,13 +57,13 @@ useEffect(() => {
               {product.sizes.map((size, index) => (
                 <button
                   key={index}
-                  className="border-2 border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-50 transition-all duration-200 rounded-sm">
+                  className="border-2 border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-50 transition-all duration-200 rounded-sm cursor-pointer">
                   {size}
                 </button>
               ))}   
             </div>
           </div>
-            <button className="bg-gray-900 hover:bg-black text-white font-medium px-10 py-3 transition-all duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 rounded-sm">
+            <button className="bg-gray-900 hover:bg-black text-white font-medium px-10 py-3 transition-all duration-300 ease-in-out transform hover:scale-[1.02] rounded-sm cursor-pointer">
               Add to Cart
             </button>
         </div>
