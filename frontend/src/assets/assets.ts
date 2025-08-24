@@ -727,11 +727,15 @@ export const products: Product[] = [
     }
 
 ]
+
 // Updated filter categories to match the expanded data
 export const filterCategories = {
     categories: ["Men", "Women", "Kids", "Unisex", "Teen"],
     subCategories: ["Topwear", "Bottomwear", "Winterwear", "Footwear", "Accessories", "Activewear", "Formalwear"]
 };
+
+
+// === POLICIES DATA ===
 
 import { RefreshCw, Shield, Headphones } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -761,5 +765,30 @@ export const policies: Policy[] = [
     title: 'Best Customer Support',
     description: 'We provide 24/7 customer support',
     color: 'text-purple-500',
+  },
+];
+
+export const dummyCartData = [
+  {
+    cartItemId: "cart1",
+    productId: "aaaby",
+    name: "Women Zip-Front Relaxed Fit Jacket",
+    price: 320,
+    size: "M",
+    quantity: 2,
+    image: p_img51,
+    category: "Women",
+    subCategory: "Winterwear",
+  },
+  {
+    cartItemId: "cart2",
+    productId: "aaabz",
+    name: "Men Slim Fit Relaxed Denim Jacket",
+    price: 350,
+    size: "L",
+    quantity: 1,
+    image: p_img2_1,
+    category: "Men",
+    subCategory: "Winterwear",
   },
 ];

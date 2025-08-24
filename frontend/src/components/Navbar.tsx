@@ -33,7 +33,7 @@ const Navbar = () => {
         <Link to="">
           <img src={profileIcon} alt="profileicon" className="w-5 h-auto" />
         </Link>
-        <Link to="">
+        <Link to="/cart">
           <img src={cartIcon} alt="carticon" className="w-5 h-auto" />
         </Link>
         <img src={menuIcon} alt="" className="w-5 md:hidden " onClick={() => setIsOpen(true)}/>
