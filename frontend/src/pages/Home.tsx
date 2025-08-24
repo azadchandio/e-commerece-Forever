@@ -18,8 +18,8 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
-      <ProductSection title="Latest Collections" products={latestCollections} />
-      <ProductSection title="Best Seller" products={bestSellers} />
+      <ProductSection title="Latest Collections" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry" products={latestCollections} />
+      <ProductSection title="Best Seller" desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry" products={bestSellers} />
       <PolicySection />
     </div>
   );
